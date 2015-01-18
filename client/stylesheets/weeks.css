@@ -24,3 +24,8 @@
   float: left;
   margin: 1px;
 }
+
+.year {
+  margin: 1px;
+  display: block;
+}

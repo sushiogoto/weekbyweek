@@ -37,18 +37,27 @@ Template.weeksIndex.rendered = function() {
   // }
 
   var startDate = moment(moment(expectancy.birthday).year(), 'YYYY');
-  var endDate = moment(moment(expectancy.deathday).year(), 'YYYY');
+  var endDate = moment(moment(expectancy.deathday).year(), 'YYYY').endOf('year');
+
 
   for (var m = startDate, y = startDate.year(), newYear = false; m.isBefore(endDate); m.add(1, 'weeks')) {
     // use isoWeek here because epoch calendar logs week with Jan 1 as first week
     if(m.isoWeek() === 1 && m.year() === moment(expectancy.birthday).year()) {
-      $('<div class="year">').appendTo('#weeks');
+      $('<div class="year col-md-6">').appendTo('#weeks');
     } else if(m.year() != y && m.year() !== moment(expectancy.deathday).year()) {
       y = m.year();
       $('</div>').appendTo('#weeks');
-      $('<div class="year">').appendTo('#weeks');
+      $('<div class="year col-md-6">').appendTo('#weeks');
     } else if(m.year() != y) {
       $('</div>').appendTo('#weeks');
+    }
+
+    if(m.year() === moment(expectancy.birthday).year() && m.isoWeek() <= startFillerWeeks) {
+      $('<div class="nothing-week"></div>').appendTo('#weeks');
+    } else if(m.isBefore(moment(expectancy.deathday))) {
+      $('<div class="week"></div>').appendTo('#weeks');
+    } else {
+      $('<div class="nothing-week"></div>').appendTo('#weeks');
     }
   }
 

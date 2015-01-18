@@ -1,0 +1,26 @@
+#lifeContainer {
+  position: relative;
+  text-align: center;
+}
+
+#weeks {
+  margin: 50 auto;
+  text-align: center;
+  position: absolute;
+}
+
+.week {
+  height: 7px;
+  width: 7px;
+  background-color: blue;
+  float: left;
+  margin: 1px;
+}
+
+.nothing-week {
+  height: 7px;
+  width: 7px;
+  background-color: black;
+  float: left;
+  margin: 1px;
+}

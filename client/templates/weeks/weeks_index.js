@@ -12,7 +12,14 @@ Template.weeksIndex.helpers({
 
 Template.weeksIndex.events({
   'click .alive': function(event, template) {
-    debugger;
+    var weekDate = $(event.target).data('date');
+    var weekId = Meteor.call('loadWeek', weekDate, function (error, result) {
+      if(error) {
+        console.log('Error!');
+      } else if(result) {
+        Router.go('weekPage', {_id: result});
+      }
+    });
   }
 });
 

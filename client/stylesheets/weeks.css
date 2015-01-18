@@ -10,22 +10,27 @@
 }
 
 .week {
-  height: 7px;
-  width: 7px;
-  background-color: blue;
+  height: 19px;
+  width: 19px;
   float: left;
   margin: 1px;
+  background-color: white;
+  cursor: pointer;
 }
 
-.nothing-week {
-  height: 7px;
-  width: 7px;
+.dead {
   background-color: black;
-  float: left;
-  margin: 1px;
+}
+
+.alive {
+  background-color: green;
 }
 
 .year {
-  margin: 1px;
+  clear: both;
+  float: left;
   display: block;
+  position: relative;
 }
+
+/* maybe try using bootstrap divs so the cubes are responsive */

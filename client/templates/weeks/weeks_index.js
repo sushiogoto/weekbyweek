@@ -125,7 +125,7 @@ Template.weeksIndex.rendered = function() {
 
     if(m.isBefore(moment(expectancy.deathday)) && m.isBefore(moment()) && newYear) {
       $('<div data-date="' + m.format('YYYY-MM-DD') + '" class="week alive" data-toggle="tooltip"></div>').appendTo('#' + y + '-years');
-    } else if(m.isBefore(moment(expectancy.deathday)) && m.isBefore(moment())) {
+    } else if(m.isBefore(moment(expectancy.deathday)) && m.isBefore(moment().add(1, 'weeks'))) {
       $('<div data-date="' + m.format('YYYY-MM-DD') + '" class="week alive"></div>').appendTo('#' + y + '-years');
     } else if(m.isBefore(moment(expectancy.deathday))) {
       $('<div data-date="' + m.format('YYYY-MM-DD') + '" class="week"></div>').appendTo('#' + y + '-years');

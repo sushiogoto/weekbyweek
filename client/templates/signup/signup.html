@@ -4,7 +4,27 @@
       <div class="form-group">
         <label for="birthday">Birthday</label>
         <div class="input-group date">
-          <input type="text" value="12-02-2012" class="form-control" id="birthday" name="birthday" placeholder="Enter your birthday" required><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+          <input type="text" value="01-01-1990" class="form-control" id="birthday" name="birthday" placeholder="Enter your birthday" required/><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+        </div>
+        <label for="country">Country</label>
+        <div class="dropdown">
+
+            <select class="form-control" id="country" role="menu">
+              {{#each countryName}}
+                <option data-iso="{{this.iso}}">{{this.name}}</option>
+              {{/each}}
+            </select>
+
+        </div>
+
+        <label for="Gender">Gender</label>
+        <div class="dropdown">
+
+            <select class="form-control" id="gender" role="menu">
+              <option value="MA">Male</option>
+              <option value="FE">Female</option>
+            </select>
+
         </div>
       </div>
 

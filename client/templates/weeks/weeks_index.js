@@ -113,14 +113,14 @@ Template.weeksIndex.rendered = function() {
   for (var m = startDate, y = 0, w = 1, newYear = false; w <= (expectancy.lifeExpectancy + 1) * 52; m.add(1, 'weeks'), y = y, w++) {
     // use isoWeek here because epoch calendar logs week with Jan 1 as first week
     if(w === 1) {
-      $('<div id="' + y + '-years" class="year">').appendTo('#weeks');
+      $('<div id="' + y + '-years" class="years">').appendTo('#weeks');
     } else if(w % 52 === 0) {
       $('</div>').appendTo('#weeks');
       newYear = true;
     } else if(newYear) {
       y++;
       newYear = false;
-      $('<div id="' + y + '-years" class="year">').appendTo('#weeks');
+      $('<div id="' + y + '-years" class="years">').appendTo('#weeks');
     }
 
     if(m.isBefore(moment(expectancy.deathday)) && m.isBefore(moment()) && newYear) {

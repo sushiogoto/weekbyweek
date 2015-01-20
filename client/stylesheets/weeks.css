@@ -1,17 +1,20 @@
 #lifeContainer {
   position: relative;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 #weeks {
-  margin: 50 auto;
   text-align: center;
-  position: absolute;
+  position: relative;
+  width: 860px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .week {
-  height: 19px;
-  width: 19px;
+  height: 14px;
+  width: 14px;
   float: left;
   margin: 1px;
   background-color: white;
@@ -19,14 +22,22 @@
 }
 
 .dead {
-  background-color: black;
+  background-color: #aaaaaa;
 }
 
 .alive {
-  background-color: green;
+  background-color: #b9d8d6;
 }
 
-.year {
+.good {
+  background-color: #79f295;
+}
+
+.bad {
+  background-color: #d84c60;
+}
+
+.years {
   clear: both;
   float: left;
   display: block;
@@ -34,3 +45,12 @@
 }
 
 /* maybe try using bootstrap divs so the cubes are responsive */
+
+
+.journal {
+  color: black;
+  width: 50%;
+  font-size: 2em;
+  z-index: 1000;
+  position: absolute;
+}

@@ -16,4 +16,13 @@ if (Weeks.find().count() === 0) {
     beginWeek: moment('19890708', 'YYYYMMDD').week(),
     endWeek: moment('19890708', 'YYYYMMDD').add(80, 'years').week()
   });
+
+  for (var i = 0; i < 10; i++) {
+    Weeks.insert({
+      modified: true,
+      userId: "uPzc6B5ALtnzx9dkW",
+      journal: "Went climbing, it was cool",
+      feeling: $('good')
+    });
+  }
 }

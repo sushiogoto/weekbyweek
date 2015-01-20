@@ -47,11 +47,15 @@ Template.weeksIndex.events({
 // };
 
 Template.weeksIndex.rendered = function() {
+  $('body').css('background', '#eae8e8');
   var expectancy = Expectancies.find().fetch()[0];
   var weeks = Math.floor(expectancy.lifeWeeks);
   var startFillerWeeks = expectancy.beginWeek;
   var endFillerWeeks = moment(expectancy.deathday).weeksInYear() - expectancy.endWeek;
   var totalWeeksDisplayed = weeks + startFillerWeeks + endFillerWeeks;
+
+  var userWeeks = Weeks.find({userId: Meteor.userId()}).fetch();
+
   // calculate using moment weeks in year
 
   // for(i = 0; i <= totalWeeksDisplayed; i++) {
@@ -134,6 +138,20 @@ Template.weeksIndex.rendered = function() {
     }
   }
 
+  userWeeks.forEach(function(week) {
+    currentWeek = $('div').find("[data-date='" + week.date + "']");
+    currentWeek.attr('data-content', week.summary);
+    currentWeek.attr('data-toggle', "popover");
+    if(week.feeling === "good") {
+      currentWeek.addClass("good");
+    } else {
+      currentWeek.addClass("bad");
+    }
+    console.log(currentWeek);
+  });
 
-
+  $('[data-toggle="popover"]').popover({
+      trigger: 'hover',
+      'placement': 'top'
+  });
 };

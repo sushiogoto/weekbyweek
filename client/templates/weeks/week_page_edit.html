@@ -1,25 +1,31 @@
 <template name="weekPageEdit">
-  <div class="col-md-8 week_form">
+
+  <div class="jumbotron">
     <form role="form">
       <div class="form-group">
-        <label for="journal">Journal</label>
-        <input type="text" class="form-control" name="journal" id="journal" placeholder="Write about your week" required>
+        <label for="summary">Summarise your week in a few words</label>
+        <input type="text" class="form-control" name="summary" id="summary" placeholder="Aim for 3 words" required>
       </div>
+      <div class="form-group">
+        <label for="journal">Journal</label>
+        <input type="textarea" class="form-control" name="journal" id="journal" placeholder="Write about your week" required>
+      </div>
+
+      <label for="feeling">How was your week?</label>
+      <div class="input-group" id="feeling">
+
+        <span class="input-group-addon">
+          <label for="feeling">Good</label>
+          <input type="radio" aria-label="feeling" value="good">
+        </span>
+        <span class="input-group-addon">
+          <label for="feeling">Bad</label>
+          <input type="radio" aria-label="feeling" value="bad">
+        </span>
+      </div><!-- /input-group -->
 
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
 
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-        Dropdown
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-      </ul>
-    </div>
   </div>
 </template>
